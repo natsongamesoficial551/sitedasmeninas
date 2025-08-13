@@ -20,19 +20,19 @@
             --venezuela-blue: #CF142B;
             --venezuela-red: #00247D;
             --primary-gradient: linear-gradient(135deg, #FCDD09 0%, #CF142B 50%, #00247D 100%);
-            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
             --success-color: #10b981;
             --warning-color: #f59e0b;
             --error-color: #ef4444;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --border-color: #e5e7eb;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --bg-primary: #f8fafc;
+            --bg-secondary: #e2e8f0;
+            --border-color: #cbd5e1;
+            --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.1), 0 2px 4px -2px rgb(15 23 42 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.1), 0 8px 10px -6px rgb(15 23 42 / 0.1);
         }
 
         body {
@@ -152,16 +152,18 @@
         .question-container {
             margin-bottom: 2.5rem;
             padding: 1.5rem;
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             border-radius: 12px;
-            border-left: 4px solid var(--venezuela-yellow);
+            border-left: 4px solid #3B82F6;
             transition: all 0.3s ease;
             position: relative;
+            box-shadow: var(--shadow-md);
         }
 
         .question-container:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
+            border-left-color: #1D4ED8;
         }
 
         .question-number {
@@ -197,25 +199,27 @@
             position: relative;
             cursor: pointer;
             background: white;
-            border: 2px solid var(--border-color);
+            border: 2px solid #E2E8F0;
             border-radius: 10px;
             padding: 1rem 1.25rem;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             min-height: 60px;
+            box-shadow: var(--shadow-sm);
         }
 
         .answer-option:hover {
-            border-color: var(--venezuela-yellow);
-            background: #fffbeb;
+            border-color: #3B82F6;
+            background: #EBF8FF;
             transform: translateX(4px);
+            box-shadow: var(--shadow-md);
         }
 
         .answer-option.selected {
-            border-color: var(--venezuela-blue);
-            background: #fef2f2;
-            box-shadow: var(--shadow-sm);
+            border-color: #1D4ED8;
+            background: #DBEAFE;
+            box-shadow: var(--shadow-md);
         }
 
         .answer-option.correct {
@@ -250,7 +254,7 @@
         .custom-radio {
             width: 20px;
             height: 20px;
-            border: 2px solid #d1d5db;
+            border: 2px solid #94A3B8;
             border-radius: 50%;
             margin-right: 1rem;
             position: relative;
@@ -259,8 +263,8 @@
         }
 
         .answer-option input[type="radio"]:checked + .custom-radio {
-            border-color: var(--venezuela-blue);
-            background: var(--venezuela-blue);
+            border-color: #1D4ED8;
+            background: #1D4ED8;
         }
 
         .answer-option input[type="radio"]:checked + .custom-radio::after {
@@ -421,13 +425,14 @@
         .cultural-fact {
             margin-top: 2rem;
             padding: 1.5rem;
-            background: linear-gradient(135deg, #fef3c7, #fbbf24);
+            background: linear-gradient(135deg, #DBEAFE, #93C5FD);
             border-radius: 12px;
-            border-left: 4px solid var(--venezuela-yellow);
+            border-left: 4px solid #3B82F6;
+            box-shadow: var(--shadow-md);
         }
 
         .cultural-fact h3 {
-            color: var(--text-primary);
+            color: #1E40AF;
             margin-bottom: 0.5rem;
             font-size: 1.125rem;
             font-weight: 600;
@@ -437,7 +442,7 @@
         }
 
         .cultural-fact p {
-            color: var(--text-secondary);
+            color: #1E3A8A;
             font-size: 0.95rem;
             line-height: 1.6;
         }
@@ -486,11 +491,11 @@
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
             :root {
-                --text-primary: #f9fafb;
-                --text-secondary: #d1d5db;
-                --bg-primary: #1f2937;
-                --bg-secondary: #374151;
-                --border-color: #4b5563;
+                --text-primary: #f1f5f9;
+                --text-secondary: #cbd5e1;
+                --bg-primary: #1e293b;
+                --bg-secondary: #334155;
+                --border-color: #475569;
             }
             
             .quiz-container {
@@ -501,6 +506,28 @@
             .answer-option {
                 background: var(--bg-secondary);
                 border-color: var(--border-color);
+            }
+
+            .answer-option:hover {
+                background: #2563eb;
+                border-color: #3b82f6;
+            }
+
+            .answer-option.selected {
+                background: #1d4ed8;
+                border-color: #2563eb;
+            }
+
+            .cultural-fact {
+                background: linear-gradient(135deg, #1e3a8a, #1d4ed8);
+            }
+
+            .cultural-fact h3 {
+                color: #93c5fd;
+            }
+
+            .cultural-fact p {
+                color: #dbeafe;
             }
         }
 
