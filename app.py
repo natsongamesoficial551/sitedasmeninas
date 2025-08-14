@@ -14,7 +14,7 @@ def auto_ping():
     while True:
         try:
             print("[AutoPing] Enviando ping para o app...")
-            requests.get("https://mostravip.onrender.com")  # ⬅️ Substitua pelo seu domínio Render
+            requests.get("https://quizvenezuela.onrender.com")  # ⬅️ Substitua pelo seu domínio Render
         except Exception as e:
             print(f"[AutoPing] Erro ao pingar: {e}")
         time.sleep(300)  # 5 minutos = 300 segundos
